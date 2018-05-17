@@ -1,0 +1,10 @@
+version: "2.1"
+
+services:
+  cli:
+    # Extend the stock cli image (see .docksal/services/cli/Dockerfile)
+    image: ${COMPOSE_PROJECT_NAME_SAFE}/cli
+    build: services/cli
+    # Custom command to run when the container starts
+    # Using nodemon for live reload
+    command: ["nodemon", "index.js"]
